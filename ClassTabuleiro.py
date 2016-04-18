@@ -6,7 +6,7 @@ class tabuleiro:
        self.tabuleiro.geometry("378x340")
        
        #Colunas e fileiras:        
-       for i in range (0, 3):
+       for i in range (0,3):
            self.tabuleiro.rowconfigure(i, minsize=0, weight=1)
        
        for i in range (0,3):        
@@ -20,9 +20,8 @@ class tabuleiro:
                    botão.grid(row =  i, column = j, sticky = "nsew")       
        
        
-       label = tk.Label(self.tabuleiro)
-       label.configure(font = ("Times", "12"))
-       label.grid(row=3, column=0, columnspan=2, sticky="nsew")
+       label = tk.Label(text='Próxima jogada:')
+       label.grid(row=3, column=0, columnspan=2, sticky="nsw")
 
 
     
