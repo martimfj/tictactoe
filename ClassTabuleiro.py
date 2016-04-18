@@ -25,7 +25,8 @@ class tabuleiro:
                  
       
       
-       label = tk.Label(text='Próxima jogada:')
+       #Label:
+       label = tk.Label(text='Próxima jogada:', font=("Helvetica", 12))
        label.grid(row=3, column=0, columnspan=2, sticky="nsw")
 
 
