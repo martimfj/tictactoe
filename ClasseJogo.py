@@ -11,10 +11,10 @@ Created on Thu Apr 14 15:13:08 2016
     
 class jogo:
 
-    def recebe_jogada(self, linha, coluna): #receber e registra a jogada, deve alterar os jogadores e não retorna nada.
-
+    def recebe_jogada(self, linha, coluna): #receber e registrar a jogada, deve alterar os jogadores e não retorna nada.
+        
     
     def verifica_ganhador(self): #Retorna 0 em empate, 1 se X vencer, 2 se O vencer, -1 caso contrário.
      
 
-    def limpa_jogadas(self): #Limpa jogadas (reninia o jogo)
+    def limpa_jogadas(self): #Limpa jogadas (renicia o jogo)
