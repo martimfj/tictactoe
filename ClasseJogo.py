@@ -20,19 +20,17 @@ class Jogo:
         	self.jogador = 1 #X
 
     def verifica_ganhador(self): #Retorna 0 em empate, 1 se X vencer, 2 se O vencer, -1 caso contrário.
-#        if self.tab[0][0] + self.tab[0][1] + self.tab[0][2] == 3:
-#            return 1 
-#        elif self.tab[1][0] + self.tab[1][1] + self.tab[1][2] == 3: 
-#           return 1
-#        elif self.tab[2][0] + self.tab[2][1] + self.tab[2][2] == 3: 
+  
+#------Soma das linhas para verificar jogador------#
       self.somalinha1 = 0 
         for j in range (0,3):
           self.somalinha1 += self.tab[0][j] 
             if self.somalinha1 == 3:
               return 1 
             elif self.somalinha1 == 6:
-              return 2 
-           
+              return 2
+            else:
+              return -1 #como ficaria o empate?
            
       self.somalinha2 = 0 
         for j in range (0,3):
@@ -40,7 +38,9 @@ class Jogo:
             if self.somalinha2 == 3:
               return 1 
             elif self.somalinha2 == 6:
-              return 2 
+              return 2
+            else:
+              return -1
            
            
       self.somalinha3 = 0 
@@ -49,8 +49,42 @@ class Jogo:
             if self.somalinha3 == 3:
               return 1 
             elif self.somalinha3 == 6:
-              return 2 
-           
-      print(self.somalinha1, self.somalinha2, self.somalinha3)
+              return 2
+
+#------Soma das colunas para verificar jogador------#
+      self.somacoluna1 = 0 
+      for j in range (0,3):
+          self.somacoluna1 += self.tab[j][0]
+            if self.somacoluna1 == 3:
+              return 1 
+            elif self.somacoluna1 == 6:
+              return 2
+
+      self.somacoluna2 = 0 
+      for j in range (0,3):
+          self.somacoluna2 += self.tab[j][1]
+            if self.somacoluna2 == 3:
+              return 1 
+            elif self.somacoluna2 == 6:
+              return 2
+
+      self.somacoluna3 = 0 
+      for j in range (0,3):
+          self.somacoluna3 += self.tab[j][2]
+            if self.somacoluna3 == 3:
+              return 1 
+            elif self.somacoluna3 == 6:
+              return 2
+
+#------Soma das diagonais para verificar jogador------#
+      if self.tab[0][0] + self.tab[1][1] + self.tab[2][2] == 3:
+        return 1 
+      elif self.tab[0][0] + self.tab[1][1] + self.tab[2][2] == 6:
+        return 2
+      elif self.tab[2][0] + self.tab[2][1] + self.tab[2][2] != 3:
 
 #def limpa_jogadas(self):
+
+        self.tab = [[0,0,0],
+                    [0,0,0],
+                    [0,0,0]]
