@@ -62,6 +62,8 @@ class Jogo:
                 return 1 
             elif self.somacoluna1 == 6:
                return 2
+            else:
+                return -1
 
         self.somacoluna2 = 0 
         for j in range (0,3):
@@ -70,6 +72,8 @@ class Jogo:
                 return 1 
             elif self.somacoluna2 == 6:
                 return 2
+            else:
+                return -1
 
         self.somacoluna3 = 0 
         for j in range (0,3):
@@ -78,13 +82,16 @@ class Jogo:
                 return 1 
             elif self.somacoluna3 == 6:
                 return 2
-               
+            else:
+                return -1
+
 #------Soma das diagonais para verificar jogador------#
         if self.tab[0][0] + self.tab[1][1] + self.tab[2][2] == 3:
             return 1 
         elif self.tab[0][0] + self.tab[1][1] + self.tab[2][2] == 6:
             return 2
-        elif self.tab[2][0] + self.tab[2][1] + self.tab[2][2] != 3:
+        else:
+            return -1
 
 #def limpa_jogadas(self):
 
