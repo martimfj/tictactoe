@@ -10,7 +10,7 @@ class tabuleiro:
         self.tabuleiro.title("TicTacToe Enjoo com Batata")
         self.tabuleiro.resizable(height = False, width=False)
         self.tabuleiro.geometry("300x300+0+0")
-       
+        
         #Colunas e fileiras:        
         for i in range (0,3):
            self.tabuleiro.rowconfigure(i, weight=1)
@@ -66,7 +66,7 @@ class tabuleiro:
         self.botoes[2][2] = tk.Button(self.tabuleiro)
         self.botoes[2][2].configure(width = 6, height = 3, text = '---', font=("Helvetica", 24), command = self.botao22_clicado)
         self.botoes[2][2].grid(row =  2, column = 2, sticky = "nsew")                                       
-    
+        
 
     
 
@@ -81,8 +81,15 @@ class tabuleiro:
         else:
             self.botoes[0][0].configure(text = 'O')
             self.botoes[0][0].configure(state = 'disabled')
-        self.meu_jogo.verifica_ganhador()   
-    
+        resultado = self.meu_jogo.verifica_ganhador()
+        if resultado == 1:
+            print("O ganhou")
+        elif resultado == 8:
+            print("X ganhou") 
+        elif resultado == 0:
+            return 0
+        else:
+            print("Empate")
     def botao01_clicado(self):
         self.meu_jogo.recebe_jogada(0,1)
         if self.meu_jogo.jogador == 1:
@@ -91,7 +98,15 @@ class tabuleiro:
         else:
             self.botoes[0][1].configure(text = 'O')
             self.botoes[0][1].configure(state = 'disabled')
-        self.meu_jogo.verifica_ganhador()            
+        resultado = self.meu_jogo.verifica_ganhador()
+        if resultado == 1:
+            print("O ganhou")
+        elif resultado == 2:
+            print("X ganhou")
+        elif resultado == 0:
+            return 0
+        else:
+            print("Empate")        
             
     def botao02_clicado(self):
         self.meu_jogo.recebe_jogada(0,2)
@@ -101,7 +116,15 @@ class tabuleiro:
         else:
             self.botoes[0][2].configure(text = 'O')
             self.botoes[0][2].configure(state = 'disabled')
-        self.meu_jogo.verifica_ganhador()
+        resultado = self.meu_jogo.verifica_ganhador()
+        if resultado == 1:
+            print("O ganhou")
+        elif resultado == 2:
+            print("X ganhou")
+        elif resultado == 0:
+            return 0
+        else:
+            print("Empate")
             
     def botao10_clicado(self):
         self.meu_jogo.recebe_jogada(1,0)
@@ -111,8 +134,15 @@ class tabuleiro:
         else:
             self.botoes[1][0].configure(text = 'O')
             self.botoes[1][0].configure(state = 'disabled')
-        self.meu_jogo.verifica_ganhador()
-            
+        resultado = self.meu_jogo.verifica_ganhador()
+        if resultado == 1:
+            print("O ganhou")
+        elif resultado == 2:
+            print("X ganhou")
+        elif resultado == 0:
+            return 0
+        else:
+            print("Empate")
     def botao11_clicado(self):
         
         self.meu_jogo.recebe_jogada(1,1)
@@ -122,7 +152,15 @@ class tabuleiro:
         else:
             self.botoes[1][1].configure(text = 'O')
             self.botoes[1][1].configure(state = 'disabled')
-        self.meu_jogo.verifica_ganhador()
+        resultado = self.meu_jogo.verifica_ganhador()
+        if resultado == 1:
+            print("O ganhou")
+        elif resultado == 2:
+            print("X ganhou")
+        elif resultado == 0:
+            return 0
+        else:
+            print("Empate")
             
     def botao12_clicado(self):
         self.meu_jogo.recebe_jogada(1,2)
@@ -132,7 +170,15 @@ class tabuleiro:
         else:
             self.botoes[1][2].configure(text = 'O')
             self.botoes[1][2].configure(state = 'disabled')
-        self.meu_jogo.verifica_ganhador()
+        resultado = self.meu_jogo.verifica_ganhador()
+        if resultado == 1:
+            print("O ganhou")
+        elif resultado == 2:
+            print("X ganhou")
+        elif resultado == 0:
+            return 0
+        else:
+            print("Empate") 
             
     def botao20_clicado(self):
         self.meu_jogo.recebe_jogada(2,0)
@@ -142,7 +188,15 @@ class tabuleiro:
         else:
             self.botoes[2][0].configure(text = 'O')
             self.botoes[2][0].configure(state = 'disabled')
-        self.meu_jogo.verifica_ganhador()
+        resultado = self.meu_jogo.verifica_ganhador()
+        if resultado == 1:
+            print("O ganhou")
+        elif resultado == 2:
+            print("X ganhou")
+        elif resultado == 0:
+            return 0
+        else:
+            print("Empate")
     
     def botao21_clicado(self):
         self.meu_jogo.recebe_jogada(2,1)
@@ -152,7 +206,15 @@ class tabuleiro:
         else:
             self.botoes[2][1].configure(text = 'O')
             self.botoes[2][1].configure(state = 'disabled')
-        self.meu_jogo.verifica_ganhador()
+        resultado = self.meu_jogo.verifica_ganhador()
+        if resultado == 1:
+            print("O ganhou")
+        elif resultado == 2:
+            print("X ganhou")
+        elif resultado == 0:
+            return 0
+        else:
+            print("Empate")
         
     
     def botao22_clicado(self):
@@ -163,9 +225,17 @@ class tabuleiro:
         else:
             self.botoes[2][2].configure(text = 'O')
             self.botoes[2][2].configure(state = 'disabled')
-        self.meu_jogo.verifica_ganhador()
+        resultado = self.meu_jogo.verifica_ganhador()
+        if resultado == 1:
+            print("O ganhou")
+        elif resultado == 2:
+            print("X ganhou")
+        elif resultado == 0:
+            return 0
+        else:
+            print("Empate")
             
-            
+           
               
     def iniciar(self):
         self.tabuleiro.mainloop()
