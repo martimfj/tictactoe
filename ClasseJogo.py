@@ -78,7 +78,7 @@ class Jogo:
                 return 1 
             elif self.somacoluna3 == 6:
                 return 2
-
+               
 #------Soma das diagonais para verificar jogador------#
         if self.tab[0][0] + self.tab[1][1] + self.tab[2][2] == 3:
             return 1 
