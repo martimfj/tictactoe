@@ -1,5 +1,6 @@
 import tkinter as tk
 import ClasseJogo
+import tkinter.messagebox as tkm
 
 class tabuleiro:
     def __init__(self):
@@ -66,12 +67,6 @@ class tabuleiro:
         self.botoes[2][2] = tk.Button(self.tabuleiro)
         self.botoes[2][2].configure(width = 6, height = 3, text = '---', font=("Helvetica", 24), command = self.botao22_clicado)
         self.botoes[2][2].grid(row =  2, column = 2, sticky = "nsew")                                       
-        
-
-    
-
-    
-    
     
     def botao00_clicado(self):
         self.meu_jogo.recebe_jogada(0,0)
@@ -234,11 +229,17 @@ class tabuleiro:
             return 0
         else:
             print("Empate")
-            
-           
-              
+
+    def vencedor(self, verifica_ganhador):
+        continuar = tkm.askquestion("Alerta: {0}".format(resultado), "Gostaria de jogar outra?", icon='warning')
+        
+        limpa_jogadas()
+        if continuar == "no":
+            self.tabuleiro.destroy()   
+
     def iniciar(self):
         self.tabuleiro.mainloop()
+
 
 
 JogodaVelha = tabuleiro()
