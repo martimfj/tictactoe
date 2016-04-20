@@ -21,7 +21,7 @@ class Jogo:
 
     def verifica_ganhador(self): #Retorna 0 em empate, 1 se X vencer, 2 se O vencer, -1 caso contrário.
   
-#------Soma das linhas para verificar jogador------#
+#------Soma das linhas para verificar ganhador------#
         self.somalinha1 = 0 
         for j in range (0,3):
             self.somalinha1 += self.tab[0][j] 
@@ -29,10 +29,8 @@ class Jogo:
                 return 1 
             elif self.somalinha1 == 6:
                 return 2
-            elif self.somalinha1 != 3 and self.somalinha1 != 6:
-                return 
             else:
-                return -1 #como ficaria o empate?
+                return -1
            
         self.somalinha2 = 0 
         for j in range (0,3):
@@ -85,7 +83,7 @@ class Jogo:
             else:
                 return -1
 
-#------Soma das diagonais para verificar jogador------#
+#------Soma das diagonais para verificar ganhador------#
         if self.tab[0][0] + self.tab[1][1] + self.tab[2][2] == 3:
             return 1 
         elif self.tab[0][0] + self.tab[1][1] + self.tab[2][2] == 6:
@@ -93,5 +91,11 @@ class Jogo:
         else:
             return -1
 
+#------Soma das diagonais para verificar empate------#
+        if somalinha1 + somalinha2 + somalinha3 + somacoluna1 + somacoluna2 + somacoluna3 == 28:
+          return 0
+        else:
+          return -1
+           
 #def limpa_jogadas(self):
 

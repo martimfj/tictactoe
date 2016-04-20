@@ -23,7 +23,7 @@ class tabuleiro:
         self.label1.grid(row=3, column=0, columnspan=2, sticky="nsw")
       
         #LabeldasJogadas:
-        self.label2 = tk.Label(text = 'x' , font=("Helvetica", 12))
+        self.label2 = tk.Label(text = self.meu_jogo.jogador , font=("Helvetica", 12))
         self.label2.grid(row = 3,column = 1, sticky = "nse")   
         
         #Botões:
