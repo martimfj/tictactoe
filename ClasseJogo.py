@@ -9,15 +9,15 @@ class Jogo:
                     [0,0,0],
                     [0,0,0]]
 
-        self.jogador = 1
+        self.jogador = 2
 
 
     def recebe_jogada(self, linha, coluna): #receber e registrar a jogada, deve alterar os jogadores e não retorna nada.
         self.tab[linha][coluna] = self.jogador    
         if self.jogador == 1:
-          self.jogador = 2 #O
+            self.jogador = 2 #X
         else: 
-        	self.jogador = 1 #X
+        	self.jogador = 1 #O
 
     def verifica_ganhador(self): #Retorna 0 em empate, 1 se X vencer, 2 se O vencer, -1 caso contrário.
   

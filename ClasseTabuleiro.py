@@ -1,6 +1,5 @@
 import tkinter as tk
 import ClasseJogo
-import tkinter.messagebox as tkm
 
 class tabuleiro:
     def __init__(self):
@@ -27,7 +26,7 @@ class tabuleiro:
         self.textolabel2 = tk.StringVar()        
         self.label2 = tk.Label(textvariable = self.textolabel2 , font=("Helvetica", 12))
         self.label2.grid(row = 3,column = 1, sticky = "nse")   
-        self.textolabel2.set("O")
+        self.textolabel2.set("X")
         
         #Botões:
         self.botoes = [[1,2,3],
@@ -74,123 +73,123 @@ class tabuleiro:
     def botao00_clicado(self):
         self.meu_jogo.recebe_jogada(0,0)
         if self.meu_jogo.jogador == 1:
-            self.botoes[0][0].configure(text = 'X')
-            self.botoes[0][0].configure(state = 'disabled')
-            self.textolabel2.set("O")
-        else:
             self.botoes[0][0].configure(text = 'O')
             self.botoes[0][0].configure(state = 'disabled')
             self.textolabel2.set("X")
+        else:
+            self.botoes[0][0].configure(text = 'X')
+            self.botoes[0][0].configure(state = 'disabled')
+            self.textolabel2.set("O")
         self.resultado()
             
     def botao01_clicado(self):
         self.meu_jogo.recebe_jogada(0,1)
         if self.meu_jogo.jogador == 1:
+            self.botoes[0][1].configure(text = 'O')
+            self.botoes[0][1].configure(state = 'disabled')
+            self.textolabel2.set("X")
+
+        else:
             self.botoes[0][1].configure(text = 'X')
             self.botoes[0][1].configure(state = 'disabled')
             self.textolabel2.set("O")
-
-        else:
-            self.botoes[0][1].configure(text = 'O')
-            self.botoes[0][1].configure(state = 'disabled')
-            self.textolabel2.set("x")
         self.resultado()      
             
     def botao02_clicado(self):
         self.meu_jogo.recebe_jogada(0,2)
         if self.meu_jogo.jogador == 1:
-            self.botoes[0][2].configure(text = 'X')
-            self.botoes[0][2].configure(state = 'disabled')
-            self.textolabel2.set("O")
-
-        else:
             self.botoes[0][2].configure(text = 'O')
             self.botoes[0][2].configure(state = 'disabled')
             self.textolabel2.set("X")
+
+        else:
+            self.botoes[0][2].configure(text = 'X')
+            self.botoes[0][2].configure(state = 'disabled')
+            self.textolabel2.set("O")
         self.resultado()
             
     def botao10_clicado(self):
         self.meu_jogo.recebe_jogada(1,0)
         if self.meu_jogo.jogador == 1:
-            self.botoes[1][0].configure(text = 'X')
-            self.botoes[1][0].configure(state = 'disabled')
-            self.textolabel2.set("O")
-        else:
             self.botoes[1][0].configure(text = 'O')
             self.botoes[1][0].configure(state = 'disabled')
             self.textolabel2.set("X")
+        else:
+            self.botoes[1][0].configure(text = 'X')
+            self.botoes[1][0].configure(state = 'disabled')
+            self.textolabel2.set("O")
         self.resultado()
 
     def botao11_clicado(self):
         
         self.meu_jogo.recebe_jogada(1,1)
         if self.meu_jogo.jogador == 1:
-            self.botoes[1][1].configure(text = 'X')
-            self.botoes[1][1].configure(state = 'disabled')
-            self.textolabel2.set("O")
-        else:
             self.botoes[1][1].configure(text = 'O')
             self.botoes[1][1].configure(state = 'disabled')
             self.textolabel2.set("X")
+        else:
+            self.botoes[1][1].configure(text = 'X')
+            self.botoes[1][1].configure(state = 'disabled')
+            self.textolabel2.set("O")
         self.resultado()
             
     def botao12_clicado(self):
         self.meu_jogo.recebe_jogada(1,2)
         if self.meu_jogo.jogador == 1:
-            self.botoes[1][2].configure(text = 'X') 
-            self.botoes[1][2].configure(state = 'disabled')
-            self.textolabel2.set("O")
-        else:
-            self.botoes[1][2].configure(text = 'O')
+            self.botoes[1][2].configure(text = 'O') 
             self.botoes[1][2].configure(state = 'disabled')
             self.textolabel2.set("X")
+        else:
+            self.botoes[1][2].configure(text = 'X')
+            self.botoes[1][2].configure(state = 'disabled')
+            self.textolabel2.set("O")
         self.resultado()
             
     def botao20_clicado(self):
         self.meu_jogo.recebe_jogada(2,0)
         if self.meu_jogo.jogador == 1:
-            self.botoes[2][0].configure(text = 'X')
-            self.botoes[2][0].configure(state = 'disabled')
-            self.textolabel2.set("O")
-        else:
             self.botoes[2][0].configure(text = 'O')
             self.botoes[2][0].configure(state = 'disabled')
             self.textolabel2.set("X")
+        else:
+            self.botoes[2][0].configure(text = 'X')
+            self.botoes[2][0].configure(state = 'disabled')
+            self.textolabel2.set("O")
         self.resultado()
             
     def botao21_clicado(self):
         self.meu_jogo.recebe_jogada(2,1)
         if self.meu_jogo.jogador == 1:
-            self.botoes[2][1].configure(text = 'X')
-            self.botoes[2][1].configure(state = 'disabled')
-            self.textolabel2.set("O")
-        else:
             self.botoes[2][1].configure(text = 'O')
             self.botoes[2][1].configure(state = 'disabled')
             self.textolabel2.set("X")
+        else:
+            self.botoes[2][1].configure(text = 'X')
+            self.botoes[2][1].configure(state = 'disabled')
+            self.textolabel2.set("O")
         self.resultado()
         
     
     def botao22_clicado(self):
         self.meu_jogo.recebe_jogada(2,2)
         if self.meu_jogo.jogador == 1:
-            self.botoes[2][2].configure(text = 'X') 
-            self.botoes[2][2].configure(state = 'disabled')
-            self.textolabel2.set("O")
-            
-        else:
-            self.botoes[2][2].configure(text = 'O')
+            self.botoes[2][2].configure(text = 'O') 
             self.botoes[2][2].configure(state = 'disabled')
             self.textolabel2.set("X")
+            
+        else:
+            self.botoes[2][2].configure(text = 'X')
+            self.botoes[2][2].configure(state = 'disabled')
+            self.textolabel2.set("O")
         self.resultado()
         
     def resultado(self): 
         resultado = self.meu_jogo.verifica_ganhador()
         if resultado == 1:
-            print("O ganhou")
-            self.vencedor()
-        elif resultado == 8:
             print("X ganhou")
+            self.vencedor()
+        elif resultado == 2:
+            print("O ganhou")
             self.vencedor()
         elif resultado == 0:
             print("Empate")
@@ -214,8 +213,6 @@ class tabuleiro:
     def iniciar(self):
         self.tabuleiro.mainloop()
 
-    def limpatabuleiro (self):
-        self.tabuleiro.destroy()
 
 
 
