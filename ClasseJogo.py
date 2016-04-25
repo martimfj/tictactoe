@@ -64,9 +64,9 @@ class Jogo:
         elif self.multdiagonal2 == 8:
             return 2
         elif self.multlinha1 == 0 or self.multlinha2 == 0 or self.multlinha3 == 0 or self.multcoluna1 == 0 or self.multcoluna2 == 0 or self.multcoluna3 == 0:
-            return 0
-        else:
             return -1
+        else:
+            return 0
 
         def limpa_jogadas():
             for i in range (0,3):

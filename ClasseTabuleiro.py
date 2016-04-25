@@ -87,9 +87,9 @@ class tabuleiro:
         elif resultado == 8:
             print("X ganhou") 
         elif resultado == 0:
-            return 0
-        else:
             print("Empate")
+        else:
+            return -1
             
     def botao01_clicado(self):
         self.meu_jogo.recebe_jogada(0,1)
@@ -106,12 +106,12 @@ class tabuleiro:
         resultado = self.meu_jogo.verifica_ganhador()
         if resultado == 1:
             print("O ganhou")
-        elif resultado == 2:
-            print("X ganhou")
+        elif resultado == 8:
+            print("X ganhou") 
         elif resultado == 0:
-            return 0
+            print("Empate")
         else:
-            print("Empate")        
+            return -1       
             
     def botao02_clicado(self):
         self.meu_jogo.recebe_jogada(0,2)
@@ -127,12 +127,12 @@ class tabuleiro:
         resultado = self.meu_jogo.verifica_ganhador()
         if resultado == 1:
             print("O ganhou")
-        elif resultado == 2:
-            print("X ganhou")
+        elif resultado == 8:
+            print("X ganhou") 
         elif resultado == 0:
-            return 0
-        else:
             print("Empate")
+        else:
+            return -1
             
     def botao10_clicado(self):
         self.meu_jogo.recebe_jogada(1,0)
@@ -147,12 +147,12 @@ class tabuleiro:
         resultado = self.meu_jogo.verifica_ganhador()
         if resultado == 1:
             print("O ganhou")
-        elif resultado == 2:
-            print("X ganhou")
+        elif resultado == 8:
+            print("X ganhou") 
         elif resultado == 0:
-            return 0
-        else:
             print("Empate")
+        else:
+            return -1
     def botao11_clicado(self):
         
         self.meu_jogo.recebe_jogada(1,1)
@@ -167,12 +167,12 @@ class tabuleiro:
         resultado = self.meu_jogo.verifica_ganhador()
         if resultado == 1:
             print("O ganhou")
-        elif resultado == 2:
-            print("X ganhou")
+        elif resultado == 8:
+            print("X ganhou") 
         elif resultado == 0:
-            return 0
-        else:
             print("Empate")
+        else:
+            return -1
             
     def botao12_clicado(self):
         self.meu_jogo.recebe_jogada(1,2)
@@ -187,12 +187,12 @@ class tabuleiro:
         resultado = self.meu_jogo.verifica_ganhador()
         if resultado == 1:
             print("O ganhou")
-        elif resultado == 2:
-            print("X ganhou")
+        elif resultado == 8:
+            print("X ganhou") 
         elif resultado == 0:
-            return 0
+            print("Empate")
         else:
-            print("Empate") 
+            return -1
             
     def botao20_clicado(self):
         self.meu_jogo.recebe_jogada(2,0)
@@ -207,13 +207,13 @@ class tabuleiro:
         resultado = self.meu_jogo.verifica_ganhador()
         if resultado == 1:
             print("O ganhou")
-        elif resultado == 2:
-            print("X ganhou")
+        elif resultado == 8:
+            print("X ganhou") 
         elif resultado == 0:
-            return 0
-        else:
             print("Empate")
-    
+        else:
+            return -1
+            
     def botao21_clicado(self):
         self.meu_jogo.recebe_jogada(2,1)
         if self.meu_jogo.jogador == 1:
@@ -227,12 +227,12 @@ class tabuleiro:
         resultado = self.meu_jogo.verifica_ganhador()
         if resultado == 1:
             print("O ganhou")
-        elif resultado == 2:
-            print("X ganhou")
+        elif resultado == 8:
+            print("X ganhou") 
         elif resultado == 0:
-            return 0
-        else:
             print("Empate")
+        else:
+            return -1
         
     
     def botao22_clicado(self):
@@ -249,12 +249,12 @@ class tabuleiro:
         resultado = self.meu_jogo.verifica_ganhador()
         if resultado == 1:
             print("O ganhou")
-        elif resultado == 2:
-            print("X ganhou")
+        elif resultado == 8:
+            print("X ganhou") 
         elif resultado == 0:
-            return 0
-        else:
             print("Empate")
+        else:
+            return -1
         
     def resultado(self): 
         resultado = self.meu_jogo.verifica_ganhador()
@@ -268,12 +268,11 @@ class tabuleiro:
                 print("Empate")
 
 
-    def vencedor(self, verifica_ganhador):
-        continuar = tkm.askquestion("Alerta: {0}".format(self.resultado), "Gostaria de jogar outra?", icon='warning')
+    def limpatabuleiro (self):
+        self.tabuleiro.destroy()
         
-    def limpa_jogadas(self):
-        if continuar == "no":
-            self.tabuleiro.destroy()   
+    def reiniciartab (self):
+        self.tabuleiro.mainloop()
 
     def iniciar(self):
         self.tabuleiro.mainloop()
