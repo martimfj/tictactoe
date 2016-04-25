@@ -26,7 +26,7 @@ class tabuleiro:
         self.textolabel2 = tk.StringVar()        
         self.label2 = tk.Label(textvariable = self.textolabel2 , font=("Helvetica", 12))
         self.label2.grid(row = 3,column = 1, sticky = "nse")   
-        self.textolabel2.set("X")
+        self.textolabel2.set("O")
         
         #Botões:
         self.botoes = [[1,2,3],
@@ -198,7 +198,9 @@ class tabuleiro:
             return -1
 
     def vencedor(self):
-        wishcontinuar = tk.messagebox.askyesno("O jogo acabou!", "Deseja continuar jogando?")
+        from tkinter import messagebox
+        wishcontinuar = messagebox.askyesno("O jogo acabou!", "Deseja continuar jogando?")
+        
         if wishcontinuar == "no":
             self.fechatabuleiro()
         else:
