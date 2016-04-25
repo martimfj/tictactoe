@@ -8,7 +8,7 @@ class tabuleiro:
         #Geometry.Tabuleiro        
         self.tabuleiro = tk.Tk()
         self.tabuleiro.title("Enjoo com Batata")
-
+        self.tabuleiro.resizable(height = False, width=False)
         self.tabuleiro.geometry("300x300+0+0")
         
         #Colunas e fileiras:        
@@ -201,7 +201,7 @@ class tabuleiro:
         from tkinter import messagebox
         wishcontinuar = messagebox.askyesno("O jogo acabou!", "Deseja continuar jogando?")
         
-        if wishcontinuar == "no":
+        if wishcontinuar == False:
             self.fechatabuleiro()
         else:
             for i in range (0,3):
@@ -210,7 +210,7 @@ class tabuleiro:
             self.meu_jogo.limpa_jogadas()
 
     def fechatabuleiro(self):
-        self.tabuleiro.destroy()   
+        self.tabuleiro.destroy()
 
     def iniciar(self):
         self.tabuleiro.mainloop()
