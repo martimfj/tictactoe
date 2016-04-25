@@ -9,7 +9,7 @@ class tabuleiro:
         self.tabuleiro = tk.Tk()
         self.tabuleiro.title("Enjoo com Batata")
         self.tabuleiro.resizable(height = False, width=False)
-        self.tabuleiro.geometry("300x300+0+0")
+        self.tabuleiro.geometry("300x300+500+500")
         
         #Colunas e fileiras:        
         for i in range (0,3):
@@ -34,39 +34,39 @@ class tabuleiro:
                        [7,8,9]]
                        
         self.botoes[0][0] = tk.Button(self.tabuleiro)
-        self.botoes[0][0].configure(width = 6, height = 3, text = '---', font=("Helvetica", 24), command = self.botao00_clicado)
+        self.botoes[0][0].configure(width = 6, bg = "ivory4", height = 3, text = '---', font=("Helvetica", 24), command = self.botao00_clicado)
         self.botoes[0][0].grid(row =  0, column = 0, sticky = "nsew")
 
         self.botoes[0][1] = tk.Button(self.tabuleiro)
-        self.botoes[0][1].configure(width = 6, height = 3, text = '---', font=("Helvetica", 24), command = self.botao01_clicado)
+        self.botoes[0][1].configure(width = 6, bg = "ivory3", height = 3, text = '---', font=("Helvetica", 24), command = self.botao01_clicado)
         self.botoes[0][1].grid(row =  0, column = 1, sticky = "nsew")
 
         self.botoes[0][2] = tk.Button(self.tabuleiro)
-        self.botoes[0][2].configure(width = 6, height = 3, text = '---', font=("Helvetica", 24), command = self.botao02_clicado)
+        self.botoes[0][2].configure(width = 6, bg = "ivory4", height = 3, text = '---', font=("Helvetica", 24), command = self.botao02_clicado)
         self.botoes[0][2].grid(row =  0, column = 2, sticky = "nsew")          
 
         self.botoes[1][0] = tk.Button(self.tabuleiro)
-        self.botoes[1][0].configure(width = 6, height = 3, text = '---', font=("Helvetica", 24), command = self.botao10_clicado)
+        self.botoes[1][0].configure(width = 6,  bg = "ivory3", height = 3, text = '---', font=("Helvetica", 24), command = self.botao10_clicado)
         self.botoes[1][0].grid(row =  1, column = 0, sticky = "nsew")          
 
         self.botoes[1][1] = tk.Button(self.tabuleiro)
-        self.botoes[1][1].configure(width = 6, height = 3, text = '---', font=("Helvetica", 24), command = self.botao11_clicado)
+        self.botoes[1][1].configure(width = 6, bg = "ivory4", height = 3, text = '---', font=("Helvetica", 24), command = self.botao11_clicado)
         self.botoes[1][1].grid(row =  1, column = 1, sticky = "nsew")          
 
         self.botoes[1][2] = tk.Button(self.tabuleiro)
-        self.botoes[1][2].configure(width = 6, height = 3, text = '---', font=("Helvetica", 24), command = self.botao12_clicado)
+        self.botoes[1][2].configure(width = 6,  bg = "ivory3", height = 3, text = '---', font=("Helvetica", 24), command = self.botao12_clicado)
         self.botoes[1][2].grid(row =  1, column = 2, sticky = "nsew")
 
         self.botoes[2][0] = tk.Button(self.tabuleiro)
-        self.botoes[2][0].configure(width = 6, height = 3, text = '---', font=("Helvetica", 24), command = self.botao20_clicado)
+        self.botoes[2][0].configure(width = 6, bg = "ivory4", height = 3, text = '---', font=("Helvetica", 24), command = self.botao20_clicado)
         self.botoes[2][0].grid(row =  2, column = 0, sticky = "nsew")          
 
         self.botoes[2][1] = tk.Button(self.tabuleiro)
-        self.botoes[2][1].configure(width = 6, height = 3, text = '---', font=("Helvetica", 24), command = self.botao21_clicado)
+        self.botoes[2][1].configure(width = 6,  bg = "ivory3", height = 3, text = '---', font=("Helvetica", 24), command = self.botao21_clicado)
         self.botoes[2][1].grid(row =  2, column = 1, sticky = "nsew")          
 
         self.botoes[2][2] = tk.Button(self.tabuleiro)
-        self.botoes[2][2].configure(width = 6, height = 3, text = '---', font=("Helvetica", 24), command = self.botao22_clicado)
+        self.botoes[2][2].configure(width = 6, bg = "ivory4", height = 3, text = '---', font=("Helvetica", 24), command = self.botao22_clicado)
         self.botoes[2][2].grid(row =  2, column = 2, sticky = "nsew")                                       
     
 
@@ -74,11 +74,11 @@ class tabuleiro:
         self.meu_jogo.recebe_jogada(0,0)
         if self.meu_jogo.jogador == 1:
             self.botoes[0][0].configure(text = 'O')
-            self.botoes[0][0].configure(state = 'disabled')
+            self.botoes[0][0].configure(state = 'disabled', bg = "SteelBlue1")
             self.textolabel2.set("X")
         else:
             self.botoes[0][0].configure(text = 'X')
-            self.botoes[0][0].configure(state = 'disabled')
+            self.botoes[0][0].configure(state = 'disabled', bg = "IndianRed1")
             self.textolabel2.set("O")
         self.resultado()
             
@@ -86,12 +86,12 @@ class tabuleiro:
         self.meu_jogo.recebe_jogada(0,1)
         if self.meu_jogo.jogador == 1:
             self.botoes[0][1].configure(text = 'O')
-            self.botoes[0][1].configure(state = 'disabled')
+            self.botoes[0][1].configure(state = 'disabled', bg = "SteelBlue1")
             self.textolabel2.set("X")
 
         else:
             self.botoes[0][1].configure(text = 'X')
-            self.botoes[0][1].configure(state = 'disabled')
+            self.botoes[0][1].configure(state = 'disabled', bg = "IndianRed1")
             self.textolabel2.set("O")
         self.resultado()      
             
@@ -99,12 +99,12 @@ class tabuleiro:
         self.meu_jogo.recebe_jogada(0,2)
         if self.meu_jogo.jogador == 1:
             self.botoes[0][2].configure(text = 'O')
-            self.botoes[0][2].configure(state = 'disabled')
+            self.botoes[0][2].configure(state = 'disabled', bg = "SteelBlue1")
             self.textolabel2.set("X")
 
         else:
             self.botoes[0][2].configure(text = 'X')
-            self.botoes[0][2].configure(state = 'disabled')
+            self.botoes[0][2].configure(state = 'disabled', bg = "IndianRed1")
             self.textolabel2.set("O")
         self.resultado()
             
@@ -112,11 +112,11 @@ class tabuleiro:
         self.meu_jogo.recebe_jogada(1,0)
         if self.meu_jogo.jogador == 1:
             self.botoes[1][0].configure(text = 'O')
-            self.botoes[1][0].configure(state = 'disabled')
+            self.botoes[1][0].configure(state = 'disabled', bg = "SteelBlue1")
             self.textolabel2.set("X")
         else:
             self.botoes[1][0].configure(text = 'X')
-            self.botoes[1][0].configure(state = 'disabled')
+            self.botoes[1][0].configure(state = 'disabled', bg = "IndianRed1")
             self.textolabel2.set("O")
         self.resultado()
 
@@ -125,11 +125,11 @@ class tabuleiro:
         self.meu_jogo.recebe_jogada(1,1)
         if self.meu_jogo.jogador == 1:
             self.botoes[1][1].configure(text = 'O')
-            self.botoes[1][1].configure(state = 'disabled')
+            self.botoes[1][1].configure(state = 'disabled', bg = "SteelBlue1")
             self.textolabel2.set("X")
         else:
             self.botoes[1][1].configure(text = 'X')
-            self.botoes[1][1].configure(state = 'disabled')
+            self.botoes[1][1].configure(state = 'disabled', bg = "IndianRed1")
             self.textolabel2.set("O")
         self.resultado()
             
@@ -137,11 +137,11 @@ class tabuleiro:
         self.meu_jogo.recebe_jogada(1,2)
         if self.meu_jogo.jogador == 1:
             self.botoes[1][2].configure(text = 'O') 
-            self.botoes[1][2].configure(state = 'disabled')
+            self.botoes[1][2].configure(state = 'disabled', bg = "SteelBlue1")
             self.textolabel2.set("X")
         else:
             self.botoes[1][2].configure(text = 'X')
-            self.botoes[1][2].configure(state = 'disabled')
+            self.botoes[1][2].configure(state = 'disabled', bg = "IndianRed1")
             self.textolabel2.set("O")
         self.resultado()
             
@@ -149,11 +149,11 @@ class tabuleiro:
         self.meu_jogo.recebe_jogada(2,0)
         if self.meu_jogo.jogador == 1:
             self.botoes[2][0].configure(text = 'O')
-            self.botoes[2][0].configure(state = 'disabled')
+            self.botoes[2][0].configure(state = 'disabled', bg = "SteelBlue1")
             self.textolabel2.set("X")
         else:
             self.botoes[2][0].configure(text = 'X')
-            self.botoes[2][0].configure(state = 'disabled')
+            self.botoes[2][0].configure(state = 'disabled', bg = "IndianRed1")
             self.textolabel2.set("O")
         self.resultado()
             
@@ -161,11 +161,11 @@ class tabuleiro:
         self.meu_jogo.recebe_jogada(2,1)
         if self.meu_jogo.jogador == 1:
             self.botoes[2][1].configure(text = 'O')
-            self.botoes[2][1].configure(state = 'disabled')
+            self.botoes[2][1].configure(state = 'disabled', bg = "SteelBlue1")
             self.textolabel2.set("X")
         else:
             self.botoes[2][1].configure(text = 'X')
-            self.botoes[2][1].configure(state = 'disabled')
+            self.botoes[2][1].configure(state = 'disabled', bg = "IndianRed1")
             self.textolabel2.set("O")
         self.resultado()
         
@@ -174,12 +174,12 @@ class tabuleiro:
         self.meu_jogo.recebe_jogada(2,2)
         if self.meu_jogo.jogador == 1:
             self.botoes[2][2].configure(text = 'O') 
-            self.botoes[2][2].configure(state = 'disabled')
+            self.botoes[2][2].configure(state = 'disabled', bg = "SteelBlue1")
             self.textolabel2.set("X")
             
         else:
             self.botoes[2][2].configure(text = 'X')
-            self.botoes[2][2].configure(state = 'disabled')
+            self.botoes[2][2].configure(state = 'disabled', bg = "IndianRed1")
             self.textolabel2.set("O")
         self.resultado()
         
@@ -210,7 +210,7 @@ class tabuleiro:
         else:
             for i in range (0,3):
                 for j in range (0,3):
-                    self.botoes[i][j].configure(text= "---", state = "normal")
+                    self.botoes[i][j].configure(text= "---", bg = "snow" , state = "normal")
             self.meu_jogo.limpa_jogadas()
 
     def fechatabuleiro(self):
