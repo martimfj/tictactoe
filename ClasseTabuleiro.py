@@ -81,15 +81,7 @@ class tabuleiro:
             self.botoes[0][0].configure(text = 'O')
             self.botoes[0][0].configure(state = 'disabled')
             self.textolabel2.set("X")
-        resultado = self.meu_jogo.verifica_ganhador()
-        if resultado == 1:
-            print("O ganhou")
-        elif resultado == 8:
-            print("X ganhou") 
-        elif resultado == 0:
-            print("Empate")
-        else:
-            return -1
+        self.resultado()
             
     def botao01_clicado(self):
         self.meu_jogo.recebe_jogada(0,1)
@@ -102,16 +94,7 @@ class tabuleiro:
             self.botoes[0][1].configure(text = 'O')
             self.botoes[0][1].configure(state = 'disabled')
             self.textolabel2.set("x")
-
-        resultado = self.meu_jogo.verifica_ganhador()
-        if resultado == 1:
-            print("O ganhou")
-        elif resultado == 8:
-            print("X ganhou") 
-        elif resultado == 0:
-            print("Empate")
-        else:
-            return -1       
+        self.resultado()      
             
     def botao02_clicado(self):
         self.meu_jogo.recebe_jogada(0,2)
@@ -124,15 +107,7 @@ class tabuleiro:
             self.botoes[0][2].configure(text = 'O')
             self.botoes[0][2].configure(state = 'disabled')
             self.textolabel2.set("X")
-        resultado = self.meu_jogo.verifica_ganhador()
-        if resultado == 1:
-            print("O ganhou")
-        elif resultado == 8:
-            print("X ganhou") 
-        elif resultado == 0:
-            print("Empate")
-        else:
-            return -1
+        self.resultado()
             
     def botao10_clicado(self):
         self.meu_jogo.recebe_jogada(1,0)
@@ -144,15 +119,8 @@ class tabuleiro:
             self.botoes[1][0].configure(text = 'O')
             self.botoes[1][0].configure(state = 'disabled')
             self.textolabel2.set("X")
-        resultado = self.meu_jogo.verifica_ganhador()
-        if resultado == 1:
-            print("O ganhou")
-        elif resultado == 8:
-            print("X ganhou") 
-        elif resultado == 0:
-            print("Empate")
-        else:
-            return -1
+        self.resultado()
+
     def botao11_clicado(self):
         
         self.meu_jogo.recebe_jogada(1,1)
@@ -164,15 +132,7 @@ class tabuleiro:
             self.botoes[1][1].configure(text = 'O')
             self.botoes[1][1].configure(state = 'disabled')
             self.textolabel2.set("X")
-        resultado = self.meu_jogo.verifica_ganhador()
-        if resultado == 1:
-            print("O ganhou")
-        elif resultado == 8:
-            print("X ganhou") 
-        elif resultado == 0:
-            print("Empate")
-        else:
-            return -1
+        self.resultado()
             
     def botao12_clicado(self):
         self.meu_jogo.recebe_jogada(1,2)
@@ -184,15 +144,7 @@ class tabuleiro:
             self.botoes[1][2].configure(text = 'O')
             self.botoes[1][2].configure(state = 'disabled')
             self.textolabel2.set("X")
-        resultado = self.meu_jogo.verifica_ganhador()
-        if resultado == 1:
-            print("O ganhou")
-        elif resultado == 8:
-            print("X ganhou") 
-        elif resultado == 0:
-            print("Empate")
-        else:
-            return -1
+        self.resultado()
             
     def botao20_clicado(self):
         self.meu_jogo.recebe_jogada(2,0)
@@ -204,15 +156,7 @@ class tabuleiro:
             self.botoes[2][0].configure(text = 'O')
             self.botoes[2][0].configure(state = 'disabled')
             self.textolabel2.set("X")
-        resultado = self.meu_jogo.verifica_ganhador()
-        if resultado == 1:
-            print("O ganhou")
-        elif resultado == 8:
-            print("X ganhou") 
-        elif resultado == 0:
-            print("Empate")
-        else:
-            return -1
+        self.resultado()
             
     def botao21_clicado(self):
         self.meu_jogo.recebe_jogada(2,1)
@@ -224,15 +168,7 @@ class tabuleiro:
             self.botoes[2][1].configure(text = 'O')
             self.botoes[2][1].configure(state = 'disabled')
             self.textolabel2.set("X")
-        resultado = self.meu_jogo.verifica_ganhador()
-        if resultado == 1:
-            print("O ganhou")
-        elif resultado == 8:
-            print("X ganhou") 
-        elif resultado == 0:
-            print("Empate")
-        else:
-            return -1
+        self.resultado()
         
     
     def botao22_clicado(self):
@@ -246,36 +182,40 @@ class tabuleiro:
             self.botoes[2][2].configure(text = 'O')
             self.botoes[2][2].configure(state = 'disabled')
             self.textolabel2.set("X")
-        resultado = self.meu_jogo.verifica_ganhador()
-        if resultado == 1:
-            print("O ganhou")
-        elif resultado == 8:
-            print("X ganhou") 
-        elif resultado == 0:
-            print("Empate")
-        else:
-            return -1
+        self.resultado()
         
     def resultado(self): 
         resultado = self.meu_jogo.verifica_ganhador()
         if resultado == 1:
-                print("O ganhou")
-        elif resultado == 2:
-                print("X ganhou")
+            print("O ganhou")
+            self.vencedor()
+        elif resultado == 8:
+            print("X ganhou")
+            self.vencedor()
         elif resultado == 0:
-                return 0
+            print("Empate")
+            self.vencedor()
         else:
-                print("Empate")
+            return -1
 
+    def vencedor(self):
+        wishcontinuar = tk.messagebox.askyesno("O jogo acabou!", "Deseja continuar jogando?")
+        if wishcontinuar == "no":
+            self.fechatabuleiro()
+        else:
+            for i in range (0,3):
+                for j in range (0,3):
+                    self.botoes[i][j].configure(text= "---", state = "normal")
+            self.meu_jogo.limpa_jogadas()
 
-    def limpatabuleiro (self):
-        self.tabuleiro.destroy()
-        
-    def reiniciartab (self):
-        self.tabuleiro.mainloop()
+    def fechatabuleiro(self):
+        self.tabuleiro.destroy()   
 
     def iniciar(self):
         self.tabuleiro.mainloop()
+
+    def limpatabuleiro (self):
+        self.tabuleiro.destroy()
 
 
 

@@ -68,10 +68,7 @@ class Jogo:
         else:
             return 0
 
-        def limpa_jogadas():
-            for i in range (0,3):
-                for j in range(0,3):
+    def limpa_jogadas(self):
+        for i in range (0,3):
+            for j in range(0,3):
                     self.tab[i][j] = 0
-
-
-#------Soma das diagonais para verificar empate------#
