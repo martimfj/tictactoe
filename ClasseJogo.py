@@ -71,4 +71,4 @@ class Jogo:
     def limpa_jogadas(self):
         for i in range (0,3):
             for j in range(0,3):
-                    self.tab[i][j] = 0
+                self.tab[i][j] = 0

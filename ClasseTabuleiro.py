@@ -187,10 +187,10 @@ class tabuleiro:
     def resultado(self): 
         resultado = self.meu_jogo.verifica_ganhador()
         if resultado == 1:
-            print("O ganhou")
-            self.vencedor()
-        elif resultado == 8:
             print("X ganhou")
+            self.vencedor()
+        elif resultado == 2:
+            print("O ganhou")
             self.vencedor()
         elif resultado == 0:
             print("Empate")
