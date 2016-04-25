@@ -185,21 +185,25 @@ class tabuleiro:
         
     def resultado(self): 
         resultado = self.meu_jogo.verifica_ganhador()
+        self.texto = "0"
         if resultado == 1:
             print("X ganhou")
+            self.texto = "X ganhou"
             self.vencedor()
         elif resultado == 2:
             print("O ganhou")
+            self.texto = "O ganhou"
             self.vencedor()
         elif resultado == 0:
             print("Empate")
+            self.texto = "Empate"
             self.vencedor()
         else:
             return -1
-
+            
     def vencedor(self):
         from tkinter import messagebox
-        wishcontinuar = messagebox.askyesno("O jogo acabou!", "Deseja continuar jogando?")
+        wishcontinuar = messagebox.askyesno("O jogo acabou!", "{0} . Deseja continuar jogando?".format(self.texto))
         
         if wishcontinuar == False:
             self.fechatabuleiro()
