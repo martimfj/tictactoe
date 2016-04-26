@@ -9,7 +9,7 @@ class tabuleiro:
         self.tabuleiro = tk.Tk()
         self.tabuleiro.title("Enjoo com Batata")
         self.tabuleiro.resizable(height = False, width=False)
-        self.tabuleiro.geometry("300x300+500+500")
+        self.tabuleiro.geometry("300x300+00+00")
         
         #Colunas e fileiras:        
         for i in range (0,3):
@@ -33,8 +33,6 @@ class tabuleiro:
                        [4,5,6],
                        [7,8,9]]
 
-        import mp3play
-        Somzera1 = mp3play.load('round.mp3'); play = lambda: Somzera.play()
 
         self.botoes[0][0] = tk.Button(self.tabuleiro)
         self.botoes[0][0].configure(width = 6, bg = "ivory4", height = 3, text = '---', font=("Helvetica", 24), command = self.botao00_clicado)
@@ -77,11 +75,11 @@ class tabuleiro:
         self.meu_jogo.recebe_jogada(0,0)
         if self.meu_jogo.jogador == 1:
             self.botoes[0][0].configure(text = 'O')
-            self.botoes[0][0].configure(state = 'disabled', bg = "SteelBlue1", command = play)
+            self.botoes[0][0].configure(state = 'disabled', bg = "SteelBlue1")
             self.textolabel2.set("X")
         else:
             self.botoes[0][0].configure(text = 'X')
-            self.botoes[0][0].configure(state = 'disabled', bg = "IndianRed1", command = play)
+            self.botoes[0][0].configure(state = 'disabled', bg = "IndianRed1")
             self.textolabel2.set("O")
         self.resultado()
             
